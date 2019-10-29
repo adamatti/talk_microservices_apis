@@ -1,0 +1,15 @@
+apply plugin:"groovy"
+apply plugin:"application"
+
+applicationName = "CountryGroovy"
+mainClassName = "adamatti.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.8'
+    compile group: 'com.sparkjava', name: 'spark-core', version: '2.9.1'
+}

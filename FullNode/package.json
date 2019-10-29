@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "harvesterjs": "^3.2.4",
+        "joi": "^14.3.1",
+        "lodash": "^4.17.15"
+    }
+}
