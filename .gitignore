@@ -1,0 +1,13 @@
+.gradle/
+.idea/
+.vscode/
+build/
+gradle/
+node_modules/
+
+TODO.adoc
+package-lock.json
+gradlew
+stale_outputs_checked
+
+*.bat
