@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: graphql.sample
+---
+testFramework: spock
+sourceLanguage: groovy
