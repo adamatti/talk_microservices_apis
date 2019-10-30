@@ -1,0 +1,9 @@
+{
+    countries(id:"78d6f05a-efb1-4ab5-aadf-a69b2e2e093f") {
+        id
+        name
+        states {
+            id
+        }
+    }
+}

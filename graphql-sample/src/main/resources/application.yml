@@ -1,8 +1,17 @@
 ---
 micronaut:
-  application:
-    name: graphql-sample
+    application:
+        name: graphql-sample
+    server:
+        port: 8082
 
 ---
-#graphql:
-#  graphiql.enabled: true
+graphql:
+    enabled: true
+    path: /graphql
+    graphiql:
+        enabled: true
+        path: /graphiql
+        template-path: classpath:graphiql/index.html
+        page-title: GraphiQL
+

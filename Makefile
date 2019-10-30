@@ -4,6 +4,7 @@ stop-all: ## stop all containers
 	@docker-compose stop -t 0
 	@docker-compose -f CountryGroovy/docker-compose.yml stop -t 0
 	@docker-compose -f FullNode/docker-compose.yml stop -t 0
+	@docker-compose -f graphql-sample/docker-compose.yml stop -t 0
 
 start-restql:
 	@docker-compose up -d restql-manager
@@ -14,7 +15,10 @@ start-country:
 start-node:
 	@docker-compose -f FullNode/docker-compose.yml up -d
 
-start-all: start-country start-restql start-node ## start all containers
+start-graphql:
+	@docker-compose -f graphql-sample/docker-compose.yml up -d
+
+start-all: start-country start-restql start-node start-graphql ## start all containers
 
 .PHONY: help
 help: ## show this help
