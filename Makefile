@@ -1,12 +1,20 @@
 .DEFAULT_GOAL := help
 
 stop-all: ## stop all containers
+	@docker-compose stop -t 0
 	@docker-compose -f CountryGroovy/docker-compose.yml stop -t 0
 	@docker-compose -f FullNode/docker-compose.yml stop -t 0
 
-start-all: ## start all containers
+start-restql:
+	@docker-compose up -d restql-manager
+
+start-country:
 	@docker-compose -f CountryGroovy/docker-compose.yml up -d
+
+start-node:
 	@docker-compose -f FullNode/docker-compose.yml up -d
+
+start-all: start-country start-restql start-node ## start all containers
 
 .PHONY: help
 help: ## show this help

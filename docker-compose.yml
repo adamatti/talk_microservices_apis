@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  mongo:
+    image: "mongo:4.2.1"
+    ports: 
+      - "27017:27017"
+    network_mode: host
+
+  restql:
+    image: "b2wdigital/restql-http:latest"
+    environment:
+      MONGO_URL: "mongodb://localhost:27017/restql"
+    depends_on:
+      - mongo
+    network_mode: host
+    ports:
+      - "9000:9000"
+
+  restql-manager:
+    image: "b2wdigital/restql-manager:latest"
+    network_mode: host
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: "mongodb://localhost:27017/restql"
+      RESTQL_MANAGER_PORT: 3000
+      RESTQL_SERVER_URL: "http://localhost:9000"
+    depends_on:
+      - restql

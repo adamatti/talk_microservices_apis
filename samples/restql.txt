@@ -1,0 +1,7 @@
+from country
+with id = $countryId
+only countries.name, countries.id
+
+from state with country = country.countries.id -> flatten
+only states.name
+ignore-errors
