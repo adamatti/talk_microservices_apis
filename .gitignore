@@ -11,3 +11,4 @@ gradlew
 stale_outputs_checked
 
 *.bat
+*.adoc
